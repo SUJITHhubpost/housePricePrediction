@@ -1,0 +1,188 @@
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <title>Housing Price Prediction|Home</title>
+  <!--meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Pro-Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+  />
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!--booststrap-->
+  <link href="{{ url_for('static', filename = 'css2/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all">
+  <!--//booststrap end-->
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static', filename = 'css2/font-awesome.min.css') }}" rel="stylesheet') }}">
+  <!-- //font-awesome icons -->
+  <!--stylesheets-->
+  <link href="{{ url_for('static', filename = 'css2/style.css') }}" rel='stylesheet' type='text/css' media="all">
+  <!--//stylesheets-->
+</head>
+
+<body>
+  <div class="main-top" id="home">
+    <!-- header -->
+    <div class="headder-top d-lg-flex justify-content-between align-items-center py-3 px-sm-3">
+      <!-- logo -->
+      <div id="logo">
+        <h1>
+          <a href="/">Housing Price Prediction</a>
+        </h1>
+      </div>
+      <!-- //logo -->
+      <!-- nav -->
+      <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+          <li>
+            <a href="/" class="active">Home</a>
+          </li>
+          <li>
+            <a href="/">Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- //nav -->
+    </div>
+    <!-- //header -->
+    <!-- banner -->
+    <div class="container">
+      <div class="slider-info">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 ">
+            <h5>Make Your Decision
+              <br> More Faster</h5>
+            <p class="mt-2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              Lorem ipsum dolor</p>
+            <div class="outs_more-buttn mt-md-4 mt-3">
+              <a href="/prediction">Predict Your Price</a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 banner-two-grid ">
+            <img src="{{ url_for('static', filename = 'images/b1.png') }}" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- banner -->
+  <!-- about -->
+  <!-- <section class="about py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3 about-grid-gried">
+          <div class="about-fashion-grid ">
+            <div class="about-icon text-center">
+              <span class="fa fa-line-chart" aria-hidden="true"></span>
+            </div>
+            <div class="about-wthree-grid mb-3 mt-lg-4 mt-3">
+              <h4>Grow Business</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna Lorem </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3 about-grid-gried">
+          <div class="about-fashion-grid ">
+            <div class="about-icon text-center">
+              <span class="fa fa-users" aria-hidden="true"></span>
+            </div>
+            <div class="about-wthree-grid mb-3 mt-lg-4 mt-3">
+              <h4>Great Support</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna Lorem </p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3 about-grid-gried">
+          <div class="about-fashion-grid ">
+            <div class="about-icon text-center">
+              <span class="fa fa-briefcase" aria-hidden="true"></span>
+            </div>
+            <div class="about-wthree-grid mb-3 mt-lg-4 mt-3">
+              <h4>Marketing</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna Lorem</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3 about-grid-gried">
+          <div class="about-fashion-grid ">
+            <div class="about-icon text-center">
+              <span class="fa fa-cubes" aria-hidden="true"></span>
+            </div>
+            <div class="about-wthree-grid mb-3 mt-lg-4 mt-3">
+              <h4>Consultancy</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna Lorem</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row mt-lg-5 mt-md-4 mt-3 ">
+        <div class="col-lg-6 col-md-6 my-3">
+
+          <img src="images/s1.png" alt="news image" class="img-fluid">
+
+        </div>
+        <div class="col-lg-6 col-md-6 my-3">
+          <h3 class="title">Why Choose Us?</h3>
+          <p class="sub-w3layouts-title mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna Lorem Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vestibulum nibh urna Lorem</p>
+          <div class="wthree-about-list mt-md-4 mt-3">
+            <ul>
+              <li class="mt-2">
+                <span class="fa fa-arrow-circle-right pr-2" aria-hidden="true"></span>
+                <p>
+                  Lorem ipsum dolor</p>
+              </li>
+              <li class="mt-2">
+                <span class="fa fa-arrow-circle-right pr-2" aria-hidden="true"></span>
+                <p>
+                  Vestibulum nibh urna</p>
+              </li>
+              <li class="mt-2">
+                <span class="fa fa-arrow-circle-right pr-2" aria-hidden="true"></span>
+                <p>
+                  consectetur adipiscing</p>
+              </li>
+              <li class="mt-2">
+                <span class="fa fa-arrow-circle-right pr-2" aria-hidden="true"></span>
+                <p>
+                  Lorem ipsum dolor</p>
+              </li>
+            </ul>
+          </div>
+          <div class="outs_more-buttn mt-lg-5 mt-md-4 mt-3">
+            <a href="about.html">Read More</a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section> -->
+  <!--//about -->
+  <!-- copy right -->
+  <footer>
+    <div class="bottom-footer text-center py-md-4 py-3">
+      <p>
+        © Housing Price Prediction| Project by
+      </p>
+    </div>
+  </footer>
+  <!-- copy right -->
+</body>
+
+</html>

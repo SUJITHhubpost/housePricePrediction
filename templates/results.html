@@ -1,0 +1,159 @@
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <title>Housing Price Prediction|Home</title>
+  <!--meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords"
+    content="Pro-Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!--booststrap-->
+  <link href="{{ url_for('static', filename = 'css2/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
+    media="all">
+  <!--//booststrap end-->
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static', filename = 'css2/font-awesome.min.css') }}" rel="stylesheet') }}">
+  <!-- //font-awesome icons -->
+  <!--stylesheets-->
+  <link href="{{ url_for('static', filename = 'css2/style.css') }}" rel='stylesheet' type='text/css' media="all">
+  <!--//stylesheets-->
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+    <div class="headder-top d-lg-flex justify-content-between align-items-center py-3 px-sm-3">
+      <!-- logo -->
+      <div id="logo">
+        <h1>
+          <a href="/">Housing Price Prediction</a>
+        </h1>
+      </div>
+      <!-- //logo -->
+      <!-- nav -->
+
+      <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+          <li>
+            <a href="/" class="active">Home</a>
+          </li>
+          <li>
+            <a href="/prediction">Predicct</a>
+          </li>
+          <li>
+            <a href="/train">Train Model</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- //nav -->
+
+    </div>
+
+  </div>
+  <!-- //header -->
+  <div class="using-border py-3">
+    <div class="inner_breadcrumb  ml-4">
+      <ul class="short_ls text-center">
+        <li>
+          <a href="/">Home</a>
+          <span>/ /</span>
+        </li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <!-- contact -->
+  <section class="">
+    <div class="container py-lg-5 py-md-12 py-sm-4 py-3" align=center>
+      <div class="row wrapper">
+        <h2 style="height: fit-content;">Training data for house price prediction</h2><br><br>
+        <p></p>
+        <div class="col-lg-6 col-md-6" style="height: 520px; overflow-y: scroll; border: solid, black;">
+
+          <br>
+          {% include 'table.html' %}
+
+        </div>
+        <div class="col-lg-6 col-md-6" style="height: 520px; overflow-y: scroll; border: solid, black;">
+
+          <br>
+          <div class="slika">
+            <img id="myimage" src="" alt=""/>
+        </div>
+
+        </div>
+        <!--//map -->
+
+        <div class="col-lg-12 col-md-12"><br><br>
+          <p>Learning rate : 0.01</p>
+          <br><br>
+          <h2 class='result'></h2>
+          <h5 class='result1'></h5>
+            Add Number of iterations for training
+            <input type="number" id="iter" min="60" max="1000" class="form-control" placeholder="Number of Iterations " required="">
+            <div class="col-md-3">
+              <button class="btn sent-butnn btn-lg get_result">Train Model</button>
+            </div>
+          </div>
+          
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+  <!--//contact -->
+
+
+</body>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+<!--//script-->
+<script type=text/javascript>
+  $(document).ready(function(){
+  $('.wrapper').on('click', '.get_result', function(){
+    $("#myimage").attr('src', "{{ url_for('static', filename = 'images/gear.gif') }}" + '?_=' + new Date().getTime());
+    $(".result").html('<div>Training In Progress</div> <br> <div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div><br>');
+     var iter = $("#iter").val();
+
+     $.ajax({
+      url: "/model",
+      type: "get",
+      data: {iter: iter},
+      success: function(response) {
+
+        $("#myimage").attr('src', "{{ url_for('static', filename = 'images/out.png') }}" + '?_=' + new Date().getTime());
+        $(".result").html("Training Completed; Final Weights in Folder: data/FinalWeights.csv <br>");
+        $(".result1").html("Minimum cost : " + response.result.toString());
+        
+      },
+     });
+  });
+});
+
+</script>
+
+</html>

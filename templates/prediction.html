@@ -1,0 +1,202 @@
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <title>Housing Price Prediction|Home</title>
+  <!--meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Pro-Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+  />
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!--booststrap-->
+  <link href="{{ url_for('static', filename = 'css2/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all">
+  <!--//booststrap end-->
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static', filename = 'css2/font-awesome.min.css') }}" rel="stylesheet') }}">
+  <!-- //font-awesome icons -->
+  <!--stylesheets-->
+  <link href="{{ url_for('static', filename = 'css2/style.css') }}" rel='stylesheet' type='text/css' media="all">
+  <!--//stylesheets-->
+</head>
+
+<body>
+  <div>
+    <!-- header -->
+    <div class="headder-top d-lg-flex justify-content-between align-items-center py-3 px-sm-3">
+      <!-- logo -->
+      <div id="logo">
+        <h1>
+          <a href="/">Housing Price Prediction</a>
+        </h1>
+      </div>
+      <!-- //logo -->
+<!-- nav -->
+     
+      <nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+          <li>
+            <a href="/" class="active">Home</a>
+          </li>
+          <li>
+            <a href="/">Logout</a>
+          </li>
+          <li>
+            <a href="/train">Train Model</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- //nav -->
+     
+    </div>
+    
+  </div>
+  <!-- //header -->
+  <div class="using-border py-3">
+    <div class="inner_breadcrumb  ml-4">
+      <ul class="short_ls text-center">
+        <li>
+          <a href="/">Home</a>
+          <span>/ /</span>
+        </li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
+    
+  <!-- contact -->
+  <section class="contact py-lg-4 py-md-3 py-sm-3 py-3" align="center">
+    <div class="container py-lg-5 py-md-12 py-sm-4 py-3">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h2>Features of house</h2><br>
+          All Values in square feet <br> <br>
+          <table align="center" border="1">
+            <tr>
+              <th> Number </th>
+              <th> Description </th>
+              <th> Max/Min Values</th>
+              <th> variable name </th>
+            </tr>
+          <tr>
+            <td>1</td>
+            <td>Ground floor living area </td>
+            <td>{{ minx[3] }},  {{ maxx[3] }}</td>
+            <td>x4</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>First floor area </td>
+            <td>{{ minx[1] }},  {{ maxx[1] }}</td>
+            <td>x2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Second floor area </td>
+            <td>{{ minx[2] }},  {{ maxx[2] }}</td>
+            <td>x3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td> Lot area </td>
+            <td>{{ minx[0] }},  {{ maxx[0] }}</td>
+            <td>x1</td>
+          </tr>
+        </table>
+        <br><br>
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
+                <input type="number" id="x4" min="{{ minx[3] }}" max="{{ maxx[3] }}" class="form-control" placeholder="Ground Floor Living Area " required="">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
+                <input type="number" id ="x2" min="{{ minx[1] }}" max="{{ maxx[1] }}" class="form-control" placeholder="First floor area" required="">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
+                <input type="number" id="x3" min="{{ minx[2] }}" max="{{ maxx[2] }}" class="form-control" placeholder="Second floor area" required="">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 form-group contact-forms">
+                <input type="number" id="x1" min="{{ minx[0] }}" max="{{ maxx[0] }}" class="form-control" placeholder="Lot area" required="">
+              </div>
+            </div>
+            <div class="col-md-3">
+            <button class="btn sent-butnn btn-lg get_result">Submit</button>
+            </div>
+          </div>
+        </div>
+        <!--//map -->
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center my-3 counter-list-grid">
+          <div class="counter-wthree-list">
+            <h6 class="mt-3">Predicted Price</h6>
+            <h4>Rs : 
+              <span class='result'></span>
+            </h4>
+            <p class="mt-lg-4 mt-3"></p>
+          </div>
+           <!-- <div class=" address_mail_footer_grids">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3539.812628729253!2d153.014155!3d-27.4750921!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0835840a2f%3A0xdd5e3f5c208dc0e1!2sMelbourne+St%2C+South+Brisbane+QLD+4101%2C+Australia!5e0!3m2!1sen!2sin!4v1492257477691"></iframe>
+        </div> -->
+        <!-- map -->
+        </div>
+        
+      </div>
+    </div>
+
+   
+  </section>
+  <!--//contact -->
+
+  
+  <!-- copy right -->
+  <footer>
+    <div class="bottom-footer text-center py-md-4 py-3">
+      <p>
+        © Housing Price Prediction| Project by
+      </p>
+    </div>
+  </footer>
+  <!-- copy right -->
+</body>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+<!--//script-->
+<script>
+$(document).ready(function(){
+  $('.wrapper').on('click', '.get_result', function(){
+     var x1 = $("#x1").val();
+     var x2 = $("#x2").val();
+     var x3 = $("#x3").val();
+     var x4 = $("#x4").val();
+     $.ajax({
+      url: "/result",
+      type: "get",
+      data: {x1: x1, x2: x2, x3: x3, x4: x4},
+      success: function(response) {
+        $(".result").html(response.result.toString());
+      },
+     });
+  });
+});
+
+
+</script>
+
+
+
+</html>
